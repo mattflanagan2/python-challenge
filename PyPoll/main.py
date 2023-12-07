@@ -50,3 +50,20 @@ with open(election_data_csv, 'r') as csvfile:
         print("")
         print("============================")
         print("")
+
+        output_path = 'election_results.txt'
+        with open(output_path, 'w') as output_file:
+                output_file.write("Election Results\n")
+                output_file.write("============================\n")
+                output_file.write(f'Total Votes: {total_votes}\n')
+                output_file.write("============================\n")
+                output_file.write('Candidates: \n')
+                for candidate, vote_count in candidate_votes.items():
+                        vote_percentage = (vote_count / total_votes) * 100
+                        output_file.write (f'{candidate}: {vote_percentage: .3f}% ({vote_count} votes)\n')
+                output_file.write("============================\n")
+                output_file.write(f'Winner: {winner}\n')
+                output_file.write("============================\n")
+        print(f'Results exported to {output_path}')
+        print("")
+      
