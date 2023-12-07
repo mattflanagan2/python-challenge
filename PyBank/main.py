@@ -51,4 +51,3 @@ with open(budget_data_csv, 'r') as csvfile:
     print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
     print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
     print("")
-    
