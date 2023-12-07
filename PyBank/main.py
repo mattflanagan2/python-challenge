@@ -51,3 +51,14 @@ with open(budget_data_csv, 'r') as csvfile:
     print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
     print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
     print("")
+
+    output_path = 'financialy_analysis.txt'
+    with open(output_path, 'w') as output_file:
+        output_file.write("Financial Analysis\n")
+        output_file.write("------------------------------\n")
+        output_file.write(f'Total Months: {total_months}\n')
+        output_file.write(f'Total: ${total}\n')
+        output_file.write(f'Average Change: ${average_change:.2f}\n')
+        output_file.write(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})\n')
+        output_file.write(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})\n')
+        
