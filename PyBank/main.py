@@ -52,7 +52,7 @@ with open(budget_data_csv, 'r') as csvfile:
     print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
     print("")
 
-    output_path = 'financialy_analysis.txt'
+    output_path = 'financial_analysis.txt'
     with open(output_path, 'w') as output_file:
         output_file.write("Financial Analysis\n")
         output_file.write("------------------------------\n")
