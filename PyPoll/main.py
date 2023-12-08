@@ -17,7 +17,7 @@ with open(election_data_csv, 'r') as csvfile:
         
         for row in csvreader:
                 candidate_name = row[2]
-                total_votes += 1
+                total_votes += 1                                #adding 1 for each row that it goes through to the variable total_votes
                 
                 if candidate_name in candidate_votes:
                         #if the candidate is already in the dictionary, it will add 1 to the vote count
@@ -33,28 +33,28 @@ with open(election_data_csv, 'r') as csvfile:
         print("")
         print("============================")
         print("")
-        print(f'Total Votes: {total_votes}')
+        print(f'Total Votes: {total_votes}') #printing the variable total votes
         print("")
         print("============================")
         print("")
         print('Candidates:')
-        for candidate, vote_count in candidate_votes.items():
-                vote_percentage = (vote_count/total_votes)*100
-                print(f'{candidate}: {vote_percentage:.3f}% ({vote_count} votes)')
+        for candidate, vote_count in candidate_votes.items():                        #for each candidate and vote count in the dictionary candidate votes
+                vote_percentage = (vote_count/total_votes)*100                        #calculate vote percentage
+                print(f'{candidate}: {vote_percentage:.3f}% ({vote_count} votes)')        #Print the candidate, the vote percentage to a 3rd decimal place, and their vote count
         print("")
         print("============================")
         print("")
-        winner = max(candidate_votes, key=candidate_votes.get)
+        winner = max(candidate_votes, key=candidate_votes.get)                        #winner is the candidate with the maximum candidate votes
         print(f'Winner: {winner}')
        
         print("")
         print("============================")
         print("")
 
-        output_path = 'election_results.txt'
-        with open(output_path, 'w') as output_file:
+        output_path = 'election_results.txt'                                        #this assumes the path is the same as election_data_csv at the top
+        with open(output_path, 'w') as output_file:                                #writing the next file
                 output_file.write("Election Results\n")
-                output_file.write("============================\n")
+                output_file.write("============================\n")                        # the \n starts a new line
                 output_file.write(f'Total Votes: {total_votes}\n')
                 output_file.write("============================\n")
                 output_file.write('Candidates: \n')
